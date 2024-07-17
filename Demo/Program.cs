@@ -93,7 +93,66 @@ namespace Demo
 
             #endregion
 
+            #region Shallow Copy And Deep Copy 
 
+            #region Array of Value Type
+            //int[] Arr01 = { 1, 2, 3 };
+            //int[] Arr02 = new int[3];
+
+            //Console.WriteLine($"HC of Arr01 = {Arr01.GetHashCode()}");  //HC of Arr01 = 43942917
+            //Console.WriteLine($"HC of Arr02 = {Arr02.GetHashCode()}");  //HC of Arr02 = 59941933
+            #region Shallow Copy [Stack]
+            //Arr02 = Arr01;
+
+            //Console.WriteLine("After Shallow Copy");
+
+            //Console.WriteLine($"HC of Arr01 = {Arr01.GetHashCode()}");  //HC of Arr01 = 43942917
+            //Console.WriteLine($"HC of Arr02 = {Arr02.GetHashCode()}");  //HC of Arr02 = 43942917
+
+
+
+
+            //Console.WriteLine($"Arr01[0]={Arr01[0]}"); //1
+
+            //Arr02[0] = 100;
+
+            //Console.WriteLine($"After     Arr02[0]={Arr02[0]}"); //100
+
+            //Console.WriteLine($"HC of Arr01 = {Arr01[0]}");
+            //Console.WriteLine($"HC of Arr02 = {Arr02[0]}"); 
+            #endregion
+
+            #region Deep Copy 
+
+            //Arr02 = (int[])Arr01.Clone();
+
+            ///Clone => Deep Copy 
+            ///Deep Copy Occured At heap
+            ///Creat new object with different and new Identity
+            /// that object will be the same object state [Data] of Caller [Arr01]
+
+            //Console.WriteLine("After Deep Copy ");
+            //Console.WriteLine($"HC of Arr01 = {Arr01.GetHashCode()}");  //HC of Arr01 = 43942917
+            //Console.WriteLine($"HC of Arr02 = {Arr02.GetHashCode()}");  //HC of Arr02 = 2606490
+
+
+            //Console.WriteLine($"HC of Arr01 = {Arr01[0]}"); // 1
+            //Console.WriteLine($"HC of Arr02 = {Arr02[0]}"); // 1
+
+
+            //Arr01[0] = 100;
+
+            //Console.WriteLine("After arr01[0]=100");
+            //Console.WriteLine($"HC of Arr01 = {Arr01[0]}"); //100
+            //Console.WriteLine($"HC of Arr02 = {Arr02[0]}"); //1
+
+
+            #endregion
+
+
+            #endregion
+
+            #endregion
 
         }
     }
