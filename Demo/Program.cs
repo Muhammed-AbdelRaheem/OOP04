@@ -152,6 +152,67 @@ namespace Demo
 
             #endregion
 
+            #region Array Of Referece Type
+
+            #region Array of String [Immutable Type]
+
+            //string[] Names01 = { "Omar" };
+            //string[] Names02 = new string[1]; // null
+
+            //Console.WriteLine($"HC OF Names01 = {Names01.GetHashCode()}"  );    //HC OF Names01 = 43942917
+            //Console.WriteLine($"HC OF Names2 = {Names02.GetHashCode()}");       //HC OF Names2 = 59941933
+
+
+
+            #region Shallow Copy
+            //Names02 = Names01;
+            // Shallow Copy  [Ref --- Stack]
+            //ref  [Names01 , Names02]=>  Same Object
+            //Console.WriteLine( "After Shallow Copy" );
+
+            //Console.WriteLine($"HC OF Names01 = {Names01.GetHashCode()}");//HC OF Names01 = 43942917
+            //Console.WriteLine($"HC OF Names2 = {Names02.GetHashCode()}");    //HC OF Names2 = 43942917
+
+            //Console.WriteLine($"Name1[0]={Names01[0]}"  );//omar
+            //Console.WriteLine($"Name2[0]={Names02[0]}");  //omar
+
+            //Names02[0] = "Aya";
+
+            //Console.WriteLine($"Name1[0]={Names01[0]}");//Aya
+            //Console.WriteLine($"Name2[0]={Names02[0]}");//Aya 
+            #endregion
+
+            #region DeepCopy
+
+            //Names02= (string[])Names01.Clone();
+
+            //// create new object  with new  and different Identity 
+            //// Object will have same object state  [Data]  Of Caller  Names01
+
+
+            //Console.WriteLine("After Deep Copy");
+            //Console.WriteLine($"HC OF Names01 = {Names01.GetHashCode()}");//HC OF Names01 = 43942917
+            //Console.WriteLine($"HC OF Names2 = {Names02.GetHashCode()}"); //HC OF Names2 = 2606490
+
+            //Console.WriteLine($"Name1[0]={Names01[0]}");//Omar
+            //Console.WriteLine($"Name2[0]={Names02[0]}");//Omar
+            //Names02[0] = "Aya";
+            //Console.WriteLine($"Name1[0]={Names01[0]}");//Omar
+            //Console.WriteLine($"Name2[0]={Names02[0]}");//Aya 
+
+            #endregion
+
+
+
+            #endregion
+
+
+
+            #endregion
+
+
+
+
             #endregion
 
         }
