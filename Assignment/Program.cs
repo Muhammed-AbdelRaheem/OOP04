@@ -86,6 +86,50 @@
             #endregion
 
 
+
+            #region Part02
+
+            #region Q01
+
+
+            //ICircle circle = new Circle(10.5);
+            //circle.DisplayShapeInfo();
+
+            //IRectangle rectangle = new Rectangle(10, 5);
+            //rectangle.DisplayShapeInfo();
+
+
+            #endregion
+
+            #region Q02
+
+
+            //////////////////////////////////////////////////////////////
+
+
+            #endregion
+
+            #region Q03
+
+            INotificationService emailService = new EmailNotificationService();
+            INotificationService smsService = new SmsNotificationService();
+            INotificationService pushService = new PushNotificationService();
+
+            string Name = "Muhammed Abdel Raheem ";
+            string message = "Hello, Muhammed ! This is a test message.";
+
+            emailService.SendNotification(Name, message);
+            smsService.SendNotification(Name, message);
+            pushService.SendNotification(Name, message);
+
+
+
+
+            #endregion
+
+
+            #endregion
+
         }
     }
 }
