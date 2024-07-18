@@ -5,7 +5,6 @@
         static void Main(string[] args)
         {
 
-
             #region Part01
 
             #region Q01
@@ -85,8 +84,6 @@
             //c) By separating interface names with commas
             #endregion
             #endregion
-
-
 
 
         }
