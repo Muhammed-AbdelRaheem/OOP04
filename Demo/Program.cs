@@ -364,6 +364,32 @@ namespace Demo
 
             #endregion
 
+            #region ICompareAble
+
+
+
+            //Employee[] employees = new Employee[3]
+            //    {
+            //        new Employee(){Id=30 ,Name= "ali",Salary =200220 },
+            //        new Employee(){Id=20 ,Name= "mona",Salary =5000 },
+            //        new Employee(){Id=10 ,Name= "Aliaa",Salary =2000 },
+            //    };
+
+            //Array.Sort(employees);
+
+            //foreach (
+            //    Employee employee in employees)
+            //{
+            //    Console.WriteLine(employee);
+            //    //id = 10 , Name = Aliaa, Salary = 2000
+            //    //id = 20 , Name = mona, Salary = 5000
+            //    //id = 30 , Name = ali, Salary = 200220
+            //}
+
+
+            //Console.WriteLine(employees[0].CompareTo(employees[1])); //-1
+            #endregion
+
 
         }
     }

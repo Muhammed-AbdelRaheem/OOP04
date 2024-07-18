@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Demo.ICloneable_InterFace
 {
-    internal class Employee : ICloneable
+    internal class Employee : ICloneable, IComparable
     {
 
         public int Id { get; set; }
@@ -21,6 +21,21 @@ namespace Demo.ICloneable_InterFace
                 Name = Name,
                 Salary = Salary
             };
+        }
+
+        public int CompareTo(object? obj)
+        {
+            Employee PassedEmployee = (Employee)obj;
+            if (this.Salary > PassedEmployee.Salary)
+            {
+                return 1;
+            }
+            else if (this.Salary < PassedEmployee.Salary)
+            {
+                return -1;
+            }
+            else { return 0; }
+
         }
 
         public override string ToString()
