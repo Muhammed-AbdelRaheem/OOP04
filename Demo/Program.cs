@@ -391,6 +391,33 @@ namespace Demo
             #endregion
 
 
+            #region IComparer
+
+            //Employee[] employees = new Employee[3]
+            //    {
+            //        new Employee(){Id=30 ,Name= "ali",Salary =200220 },
+            //        new Employee(){Id=20 ,Name= "mona",Salary =5000 },
+            //        new Employee(){Id=10 ,Name= "Aliaa",Salary =2000 },
+            //    };
+
+            //Array.Sort(employees, new EmployeeIdComparer());
+
+            //foreach (
+            //    Employee employee in employees)
+            //{
+            //    Console.WriteLine(employee);
+            //    //id = 30 , Name = ali, Salary = 200220
+            //    //id = 20 , Name = mona, Salary = 5000
+            //    //id = 10 , Name = Aliaa, Salary = 2000
+
+            //}
+
+
+
+            #endregion
+
+
+
         }
     }
 }
