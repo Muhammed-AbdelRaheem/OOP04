@@ -1,4 +1,5 @@
-﻿using Demo.Interfaces;
+﻿using Demo.ICloneable_InterFace;
+using Demo.Interfaces;
 using System.Runtime.InteropServices;
 using System.Text;
 
@@ -213,13 +214,13 @@ namespace Demo
 
 
             #region Array of StringBuilder [Mutable Type]
-            StringBuilder[] Names01 = new StringBuilder[1];
-            //Names01[0].Append("Omar"); //System.NullReferenceException: 
+            //StringBuilder[] Names01 = new StringBuilder[1];
+            ////Names01[0].Append("Omar"); //System.NullReferenceException: 
 
-            Names01[0] = new StringBuilder("Omar");
-            StringBuilder[] Names02 = new StringBuilder[1];
-            Console.WriteLine($"Name01 HC = {Names01.GetHashCode()} ");//Name01 HC = 43942917
-            Console.WriteLine($"Name02 HC = {Names02.GetHashCode()} "); //Name02 HC = 59941933
+            //Names01[0] = new StringBuilder("Omar");
+            //StringBuilder[] Names02 = new StringBuilder[1];
+            //Console.WriteLine($"Name01 HC = {Names01.GetHashCode()} ");//Name01 HC = 43942917
+            //Console.WriteLine($"Name02 HC = {Names02.GetHashCode()} "); //Name02 HC = 59941933
 
 
 
@@ -244,19 +245,116 @@ namespace Demo
 
             #region Deep Copy [Heap]
 
-            Names02 = (StringBuilder[])Names01.Clone();
+            //Names02 = (StringBuilder[])Names01.Clone();
 
-            Console.WriteLine("Names02 = (StringBuilder[])Names01.Clone();");
-
-
-            Console.WriteLine($"Names01[0]={Names01[0]}");//omar
-            Console.WriteLine($"Names02[0]={Names02[0]}");//omar
-
-            Names02[0].Append(" amr");
+            //Console.WriteLine("Names02 = (StringBuilder[])Names01.Clone();");
 
 
-            Console.WriteLine($"Names01[0]={Names01[0]}");// omar amr
-            Console.WriteLine($"Names02[0]={Names02[0]}");// omar amr
+            //Console.WriteLine($"Names01[0]={Names01[0]}");//omar
+            //Console.WriteLine($"Names02[0]={Names02[0]}");//omar
+
+            //Names02[0].Append(" amr");
+
+
+            //Console.WriteLine($"Names01[0]={Names01[0]}");// omar amr
+            //Console.WriteLine($"Names02[0]={Names02[0]}");// omar amr
+
+
+
+            #endregion
+
+
+
+            #endregion
+
+
+
+
+
+            #endregion
+
+
+
+
+            #endregion
+
+            #region Shallow Copy And Deep Copy 
+
+            //Employee employee01 = new Employee() { Id = 10, Name = "Aliaa", Salary = 20000 };
+            //Employee employee02 = new Employee() { Id = 20, Name = "Mona", Salary = 10000 };
+
+            //Console.WriteLine($"employee01= {employee01}");
+            //Console.WriteLine($"HC of employee01 = {employee01.GetHashCode()}");
+            ////employee01= id = 10 , Name = Aliaa, Salary = 20000
+            ////HC of employee01 = 43942917
+
+
+            //Console.WriteLine($"employee02= {employee02}");
+            //Console.WriteLine($"HC of employee02 = {employee02.GetHashCode()}");
+            ////employee02= id = 20 , Name = Mona, Salary = 10000
+            ////HC of employee02 = 59941933    
+
+            #region Shallow Copy 
+
+            //employee02 = employee01;
+
+
+            //Console.WriteLine("After Shallow Copy");
+
+
+            //Console.WriteLine($"employee01= {employee01}");
+            //Console.WriteLine($"HC of employee01 = {employee01.GetHashCode()}");
+            ////employee01= id = 10 , Name = Aliaa, Salary = 20000
+            ////HC of employee01 = 43942917
+
+
+            //Console.WriteLine($"employee02= {employee02}");
+            //Console.WriteLine($"HC of employee02 = {employee02.GetHashCode()}");
+            ////employee02= id = 20 , Name = Mona, Salary = 10000
+            ////HC of employee02 = 59941933    
+
+
+            //employee01.Id= 10;
+            //employee01.Name = "aya";
+            //employee01.Salary = 50000;
+
+            //Console.WriteLine($"employee01= {employee01}");
+            //Console.WriteLine($"employee02= {employee02}");
+
+
+
+
+
+            #endregion
+
+
+            #region Deep Copy
+
+            //employee02 = (Employee)employee01.Clone();
+
+            //Console.WriteLine("After Deep Copy");
+
+
+            //Console.WriteLine($"employee01= {employee01}");
+            //Console.WriteLine($"HC of employee01 = {employee01.GetHashCode()}");
+            ////employee01= id = 10 , Name = Aliaa, Salary = 20000
+            ////HC of employee01 = 43942917
+
+
+            //Console.WriteLine($"employee02= {employee02}");
+            //Console.WriteLine($"HC of employee02 = {employee02.GetHashCode()}");
+            ////employee02= id = 20 , Name = Mona, Salary = 10000
+            ////HC of employee02 = 59941933    
+
+
+
+            //employee02.Id = 10;
+            //employee02.Name = "aya";
+            //employee02.Salary = 50000;
+
+            //Console.WriteLine("After Changing"  );
+            //Console.WriteLine($"employee01= {employee01}");
+            //Console.WriteLine($"employee02= {employee02}");
 
 
 
@@ -266,16 +364,6 @@ namespace Demo
 
             #endregion
 
-
-
-
-
-            #endregion
-
-
-
-
-            #endregion
 
         }
     }
