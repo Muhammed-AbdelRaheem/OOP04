@@ -1,5 +1,6 @@
 ﻿using Demo.Interfaces;
 using System.Runtime.InteropServices;
+using System.Text;
 
 namespace Demo
 {
@@ -152,6 +153,10 @@ namespace Demo
 
             #endregion
 
+
+
+
+
             #region Array Of Referece Type
 
             #region Array of String [Immutable Type]
@@ -205,6 +210,63 @@ namespace Demo
 
 
             #endregion
+
+
+            #region Array of StringBuilder [Mutable Type]
+            StringBuilder[] Names01 = new StringBuilder[1];
+            //Names01[0].Append("Omar"); //System.NullReferenceException: 
+
+            Names01[0] = new StringBuilder("Omar");
+            StringBuilder[] Names02 = new StringBuilder[1];
+            Console.WriteLine($"Name01 HC = {Names01.GetHashCode()} ");//Name01 HC = 43942917
+            Console.WriteLine($"Name02 HC = {Names02.GetHashCode()} "); //Name02 HC = 59941933
+
+
+
+            #region Shallow Copy [Stack]
+            //Names02 = Names01;
+
+
+            //Console.WriteLine("Names02 = Names01");
+            //Console.WriteLine($"Name01 HC = {Names01.GetHashCode()} " );//Name01 HC = 43942917
+            //Console.WriteLine($"Name02 HC = {Names02.GetHashCode()} ");//Name02 HC = 43942917
+
+
+            //Console.WriteLine($"Names01[0]={Names01[0]}"  );// omar
+            //Console.WriteLine($"Names02[0]={Names02[0]}");  // omar
+
+            //Names02[0].Append(" amr");
+
+            //Console.WriteLine($"Names01[0]={Names01[0]}");// omar    amr
+            //Console.WriteLine($"Names02[0]={Names02[0]}");  // omar  amr 
+            #endregion
+
+
+            #region Deep Copy [Heap]
+
+            Names02 = (StringBuilder[])Names01.Clone();
+
+            Console.WriteLine("Names02 = (StringBuilder[])Names01.Clone();");
+
+
+            Console.WriteLine($"Names01[0]={Names01[0]}");//omar
+            Console.WriteLine($"Names02[0]={Names02[0]}");//omar
+
+            Names02[0].Append(" amr");
+
+
+            Console.WriteLine($"Names01[0]={Names01[0]}");// omar amr
+            Console.WriteLine($"Names02[0]={Names02[0]}");// omar amr
+
+
+
+            #endregion
+
+
+
+            #endregion
+
+
 
 
 
